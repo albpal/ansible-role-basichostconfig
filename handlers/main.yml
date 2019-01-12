@@ -1,0 +1,7 @@
+---
+# handlers file for ansible-role-basichostconfig
+- name: Restart sshd
+  service:
+    name: sshd
+    state: restarted
+  become: True
