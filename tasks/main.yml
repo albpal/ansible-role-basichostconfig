@@ -30,6 +30,14 @@
      state: permissive
      policy: targeted
   become: True
+- name: Ensure group '{{admin_group}}' exists
+  group:
+    name: "{{admin_group}}"
+    state: present
+- name: Add user '{{ssh_user}}' with group '{{admin_group}}'
+  user:
+    name: "{{ssh_user}}"
+    group: "{{admin_group}}"
 - name: Creates ssh directory
   file:
     path: "/home/{{ssh_user}}/.ssh/"
