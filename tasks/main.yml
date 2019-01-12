@@ -30,6 +30,10 @@
      state: permissive
      policy: targeted
   become: True
+- name: Creates ssh directory
+  file:
+    path: "/home/{{ssh_user}}/.ssh/"
+    state: directory
 - name: Adding ssh key to authorized hosts
   copy:
      src: authorized_keys
