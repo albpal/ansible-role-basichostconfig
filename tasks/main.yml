@@ -33,7 +33,7 @@
 - name: Adding ssh key to authorized hosts
   copy:
      src: authorized_keys
-     dst: "/home/{{ssh_user}}/.ssh/authorized_keys"
+     dest: "/home/{{ssh_user}}/.ssh/authorized_keys"
      owner: "{{ssh_user}}"
      group: "{{admin_group}}"
      mode: 0600
