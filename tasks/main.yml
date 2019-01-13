@@ -51,11 +51,11 @@
      group: "{{admin_group}}"
      mode: 0600
 - name: Allow '{{ admin_group }}' group to have non password sudo
-    lineinfile:
-       dest: /etc/sudoers
-       state: present
-       insertafter: '^%wheel'
-       line: '%{{ admin_group }} ALL=(ALL) NOPASSWD:ALL'
+  lineinfile:
+     dest: /etc/sudoers
+     state: present
+     insertafter: '^%wheel'
+     line: '%{{ admin_group }} ALL=(ALL) NOPASSWD:ALL'
 - name: Disable ssh login for root user
   lineinfile:
      dest: "/etc/ssh/sshd_config"
