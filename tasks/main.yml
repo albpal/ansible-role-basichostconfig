@@ -48,6 +48,7 @@
      dest: "/home/{{ssh_user}}/.ssh/authorized_keys"
      owner: "{{ssh_user}}"
      group: "{{admin_group}}"
+     groups: "wheel"
      mode: 0600
 - name: Disable ssh login for root user
   lineinfile:
