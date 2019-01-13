@@ -15,6 +15,7 @@ packages_to_install:
    - policycoreutils-python
    - ntp
    - firewalld
+   - git
 services_to_be_running_and_enabled:
    - ntpd
    - firewalld
